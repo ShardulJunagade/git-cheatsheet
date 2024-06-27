@@ -119,6 +119,27 @@ Make a commit and commit message without opening the editor.
 git commit -m "commit message"
 ```
 
+Automatically stage all tracked, modified files before the commit:
+```sh
+git commit -a -m "commit message"
+```
+
+Each commit has SHA hash that acts as an ID. You can use this Commit SHA to checkout specific commits.
+```sh
+git checkout <hash>
+```
+
+Components of a git commit:
+- Commit Hash: unique SHA-1 hash identifier for the commit
+- Author Info: name and email of the person who made the commit
+- Commit Message: description of what changes the commit contains
+- Timestamp
+- Parent commit hash(es)
+- Snapshot of content: snap of the project at the time of commit (not the actual files, but references to them)
+
+
+
+
 
 
 ## Log
@@ -146,6 +167,10 @@ This will ask if we want to login to Github. If declined, we can input our usern
 
 
 ## Branches
+Diversion of the state of the repo
+
+![image](https://github.com/ShardulJunagade/Github-Examples/assets/143334512/463b5659-bf53-490a-9ca9-f31a74ebe011)
+
 List of branches:
 ```sh
 git branch
@@ -166,6 +191,21 @@ The first push in a branch might require setting the upstream branch using:
 git push --set-upstream origin <branch-name>
 ```
 
+Delete a branch:
+```sh
+git branch -d <branch-name>
+```
+
+Rename a branch:
+```sh
+git branch -m <old-name> <new-name>
+```
+
+List both remote and local branches:
+```sh
+git branch -a
+```
+
 
 
 
@@ -181,11 +221,15 @@ git merge <branch-name>
 
 ## Remotes
 
+**git Upstream and Downstream**
+![image](https://github.com/ShardulJunagade/Github-Examples/assets/143334512/9aeb776c-69d3-4b8c-afd4-e326596951e6)
+
+
 To view and manage remote repositories, you can use the following commands:
 
 - List all remotes
 ```sh
-git remote -y
+git remote -v
 ```
 
 - Add a new remote:
@@ -193,10 +237,15 @@ git remote -y
 git remote add <name> <url>
 ```
 
--Remove a remote:
+- Remove a remote:
 ```sh
 git remote remove <name>
-``` 
+```
+
+- Rename a remote:
+```sh
+git remote rename <old-name> <new-name>
+```
 
 
 
