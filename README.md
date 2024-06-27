@@ -44,6 +44,34 @@ git clone https://github.com/shardul-0109/Github-Examples.git
 ```
 
 
+### SSH
+
+```sh
+git@github.com:shardul-0109/Github-Examples.git
+cd Github-Examples
+```
+You will need to create ssh key locally and save it to Github.
+
+We can test our connection here:
+```sh
+ssh -T git@github.com
+```
+
+
+### Github CLI
+
+Install the CLI for Windows
+```sh
+winget install --id GitHub.cli
+```
+
+**Configuration:**
+
+- Run `gh auth login` to authenticate with your GitHub account. Alternatively, gh will respect the `GITHUB_TOKEN` environment variable.
+
+- To set your preferred editor, use `gh config set editor <editor>`.
+
+- Declare your aliases for often-used commands with `gh alias set`.
 
 
 ## Add
@@ -119,8 +147,27 @@ When we want to push a repo to our remote origin:
 ```sh
 git push
 ```
+This will ask if we want to login to Github. If declined, we can input our username and personal access token (that we can get from the developer tools in the Github settings) as our password.
+
+
+
 
 ## Branches
+List of branches:
+```sh
+git branch
+```
+
+Create a new branch:
+```sh
+git branch <branch-name>
+```
+
+Checkout the branch:
+```sh
+git checkout <branch-name>
+```
+
 
 ## Remotes
 
