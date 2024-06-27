@@ -40,16 +40,25 @@ git clone https://github.com/shardul-0109/Github-Examples.git
 
 ### SSH
 
-```sh
-git@github.com:shardul-0109/Github-Examples.git
-cd Github-Examples
-```
 You will need to create ssh key locally and save it to Github.
+```sh
+ssh-keygen -t rsa
+```
+
+![image](https://github.com/shardul-0109/Github-Examples/assets/173961900/c67ba8a0-9b3a-4828-b723-41cffca06366)
+
 
 We can test our connection here:
 ```sh
 ssh -T git@github.com
 ```
+
+To clone using SSH:
+```sh
+git@github.com:shardul-0109/Github-Examples.git
+cd Github-Examples
+```
+
 
 
 ### Github CLI
