@@ -32,12 +32,6 @@ git commit -a -m "add readme file"
 
 We can clone in 3 ways: HTTPS, SSH, Github CLI
 
-Since we are using Github Codespaces, we'll create a temporary directory in our workspace.
-```sh
-mkdir /workspaces/tmp
-cd /workspaces/tmp
-```
-
 ### HTTPS
 ```sh
 git clone https://github.com/shardul-0109/Github-Examples.git
@@ -76,7 +70,7 @@ winget install --id GitHub.cli
 
 ## Add
 
-When we want to stage changes that will be included in the commit, we use the . to add all changes to the staging area.
+When we want to stage changes that will be included in the commit, we use the . to add all changes from all files to the staging area.
 ```sh
 git add Readme.md
 git add .
@@ -87,8 +81,7 @@ git add .
 
 ## Reset
 
-Reset allows you to move staged changes back to be unstaged.
-This is useful when you want to revert all files to the last commit.
+Reset allows you to move staged changes back to be unstaged. This is useful when you want to revert all files to the last commit.
 ```sh
 git add .
 git reset
@@ -168,10 +161,54 @@ Checkout the branch:
 git checkout <branch-name>
 ```
 
+The first push in a branch might require setting the upstream branch using:
+```sh
+git push --set-upstream origin <branch-name>
+```
+
+
+
+
+## Merging
+To merge changes from another branch into the main branch:
+```sh
+git checkout main
+git merge <branch-name>
+```
+
+
+
 
 ## Remotes
 
+To view and manage remote repositories, you can use the following commands:
+
+- List all remotes
+```sh
+git remote -y
+```
+
+- Add a new remote:
+```sh
+git remote add <name> <url>
+```
+
+-Remove a remote:
+```sh
+git remote remove <name>
+``` 
+
+
+
+
+
 ## Stashing
 
-## Merging
-
+Stashing allows you to temporarily save changes that you don't want to commit immediately.
+```sh
+git stash list
+git stash
+git stash save <name>
+git stash apply
+git stash pop
+```
