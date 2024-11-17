@@ -1,4 +1,4 @@
-# Get good at git!
+# Get good at git! - Git Cheatsheet
 
 When you first set up git on a machine, you are supposed to set your name and email.
 ```
