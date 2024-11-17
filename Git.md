@@ -45,8 +45,7 @@ You will need to create ssh key locally and save it to Github.
 ssh-keygen -t rsa
 ```
 
-![image](https://github.com/shardul-0109/Github-Examples/assets/173961900/c67ba8a0-9b3a-4828-b723-41cffca06366)
-
+![alt text](<./assets/git/Pasted image 20240628022824.png>)
 
 We can test our connection here:
 ```sh
@@ -58,7 +57,6 @@ To clone using SSH:
 git@github.com:shardul-0109/Github-Examples.git
 cd Github-Examples
 ```
-
 
 
 ### Github CLI
@@ -177,8 +175,8 @@ This will ask if we want to login to Github. If declined, we can input our usern
 
 ## Branches
 Diversion of the state of the repo
-
-![image](https://github.com/ShardulJunagade/Github-Examples/assets/143334512/463b5659-bf53-490a-9ca9-f31a74ebe011)
+ 
+![alt text](<./assets/git/Pasted image 20240628015454.png>)
 
 List of branches:
 ```sh
@@ -218,6 +216,7 @@ git branch -a
 
 
 
+
 ## Merging
 To merge changes from another branch into the main branch:
 ```sh
@@ -229,10 +228,8 @@ git merge <branch-name>
 
 
 ## Remotes
-
 **git Upstream and Downstream**
-![image](https://github.com/ShardulJunagade/Github-Examples/assets/143334512/9aeb776c-69d3-4b8c-afd4-e326596951e6)
-
+![alt text](<./assets/git/Pasted image 20240628020344.png>)
 
 To view and manage remote repositories, you can use the following commands:
 
@@ -249,7 +246,7 @@ git remote add <name> <url>
 - Remove a remote:
 ```sh
 git remote remove <name>
-```
+``` 
 
 - Rename a remote:
 ```sh
