@@ -13,12 +13,12 @@ We can:
 name: Example Workflow
 on: [push]
 jobs:
-	build:
-		runs on: ubuntu-latest
-		steps:
-		- Users: actions/checkout@v2
-		- name: Run a script
-		  run: echo "This script runs on every push."
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a script
+      run: echo "This script runs on every push."
 ```
 
 `on` contains event triggers which cause the github action to run.
@@ -39,18 +39,30 @@ defined by a YAML file in our repository
 ## Triggering Scheduled Event
 ```yaml
 on:
-	schedule:
-	- cron: '30 5 * * 1,3'
-	- cron: '30 5 * * 2,4'
+  schedule:
+    - cron: '30 5 * * 1,3' # Monday and Wednesday
+    - cron: '30 5 * * 2,4' # Tuesday and Thursday
+
 jobs:
-	test_schedule:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Not on Monday or Wednesday
-			  if: github.event.schedule != '30 5 * * 1,3'
-			  run: echo "Skip this step on Monday and Wednesday"
-			- name: Every time 
-			  run: echo "This step will always run"
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if it's Monday or Wednesday
+        id: day_check
+        run: |
+          day=$(date +%u)
+          if [[ "$day" -eq 1 || "$day" -eq 3 ]]; then
+            echo "skip=true" >> $GITHUB_ENV
+          else
+            echo "skip=false" >> $GITHUB_ENV
+
+      - name: Not on Monday or Wednesday
+        if: env.skip == 'false'
+        run: echo "This step does not run on Monday or Wednesday"
+
+      - name: Every time
+        run: echo "This step will always run"
+
 ```
 
 cron syntax - 
